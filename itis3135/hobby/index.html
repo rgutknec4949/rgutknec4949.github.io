@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole Vaulting - My Hobby</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            padding: 2em;
+            flex: 1;
+            animation: fadeIn 1s ease-in-out;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        nav a {
+            color: white;
+            margin: 0 0.5em;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        nav a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+        nav a i {
+            margin-right: 0.5em;
+        }
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #333;
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0.5em 0;
+            text-shadow: 2px 2px #FFD700;
+        }
+        h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2em;
+            margin-top: 1em;
+            padding-bottom: 0.5em;
+            color: #4CAF50;
+            text-shadow: 2px 2px #FFD700;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        section {
+            margin-bottom: 2em;
+            padding: 1em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+            background: linear-gradient(45deg, #e0f7fa, #e8f5e9, #fff3e0, #f3e5f5, #e1f5fe, #fbe9e7, #f9fbe7);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        section:hover {
+            transform: translateY(-10px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .button {
+            display: inline-block;
+            padding: 0.5em 1em;
+            margin: 1em 0;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5em;
+        }
+        .list-item i {
+            margin-right: 0.5em;
+            color: #4CAF50;
+        }
+        .fun-fact {
+            background-color: #fff;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 1em;
+            margin-top: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .fun-fact:hover {
+            transform: scale(1.05);
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+        .content-wrapper > div {
+            flex: 1;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pole Vaulting - My Hobby</h1>
+        <nav>
+            <a href="#what" onclick="showSection('what')"><i class="fas fa-info-circle"></i>What</a>
+            <a href="#who" onclick="showSection('who')"><i class="fas fa-users"></i>Who</a>
+            <a href="#when" onclick="showSection('when')"><i class="fas fa-calendar-alt"></i>When</a>
+            <a href="#where" onclick="showSection('where')"><i class="fas fa-map-marker-alt"></i>Where</a>
+            <a href="#how" onclick="showSection('how')"><i class="fas fa-cogs"></i>How</a>
+            <a href="#why" onclick="showSection('why')"><i class="fas fa-question-circle"></i>Why</a>
+            <a href="#ai-prompts" onclick="showSection('ai-prompts')"><i class="fas fa-robot"></i>AI Prompts</a>
+        </nav>
+    </header>
+    <main>
+        <section id="what">
+            <h2>What is Pole Vaulting?</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>Pole vaulting is a jumping event in the sport of track and field. The purpose of the event is to see how high you can propel yourself into the air with a long and flexible fiberglass pole.</p>
+                    <figure>
+                        <img src="images/gvaultfour.png" alt="Pole Vaulting Image">
+                        <figcaption>Myself about to clear a bar at the 49er Classic.</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <h3>Key Requirements:</h3>
+                    <ul>
+                        <li>Speed: Crucial for generating the necessary momentum to put energy into the pole that will then transfer the energy back to you.</li>
+                        <li>Strength: Needed to control the pole and propel the body upwards.</li>
+                        <li>Agility: Helps in executing the precise gymnastic aspects of the vault. It is also useful when having to bail from a sketchy jump.</li>
+                    </ul>
+                    <div class="fun-fact">
+                        <h4>Fun Fact</h4>
+                        <p>The world record for men's pole vault is held by Armand Duplantis, with a height of 6.27 meters / ~20.5 feet.</p>
+                    </div>
+                    <a href="https://en.wikipedia.org/wiki/Pole_vault" class="button" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </section>
+        <section id="who">
+            <h2>Who Got Me Into Pole Vaulting?</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>My dad pole vaulted at Appalachian State University and was my inspiration to begin my own vaulting journey. We spent countless days together practicing at my highschool that I will never forget. With his help, I was able to achieve three state titles, a school record, and a spot on the all-time performances list for North Carolina Highschoolers. At one point, he started vaulting again at age 50.</p>
+                    <figure>
+                        <img src="images/gvaultone.png" alt="Me vaulting for UNCC.">
+                        <figcaption>Me vaulting for UNCC.</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <h3>Forms of Participation:</h3>
+                    <ul>
+                        <li>High School: Many high schools offer pole vaulting, though it varies by state as in some, pole vaulting is not allowed.</li>
+                        <li>College: Collegiate athletes often compete in pole vaulting events at regional and national levels.</li>
+                        <li>Professional: Professional pole vaulters compete in international competitions, including the Olympics.</li>
+                        <li>Clubs/Masters: Clubs and masters level of participation are open to any age group and records are organized as such.</li>
+                    </ul>
+                    <div class="fun-fact">
+                        <h4>Fun Fact</h4>
+                        <p>Pole vaulting has been a part of the modern Olympic Games since 1896.</p>
+                    </div>
+                    <a href="https://www.teamusa.org/usa-track-and-field" class="button" target="_blank">Join a Team</a>
+                </div>
+            </div>
+        </section>
+        <section id="when">
+            <h2>When Does Pole Vault Take Place?</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>Typically pole vaulting can be practiced or even competed almost year round. However it depends on training programs as well as environmental conditions. When it gets too cold or if it is raining, we will have to reschedule practices due to safety hazards. That is why it is so beneficial to have an indoor facility, unfortunately Charlotte does not.</p>
+                    <figure>
+                        <img src="images/vaultfriends.png" alt="Me and my teammates at a track meet.">
+                        <figcaption>Me and my old teammates at a track meet.</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <h3>Seasons:</h3>
+                    <ul>
+                        <li>Spring: The most popular season for track and field, this is when you will be able to spectate the most pole vault.</li>
+                        <li>Summer: Outside of clubs, a summer season is not nearly as popular as spring. I used to participate in summer track when I was on my recruitment journey.</li>
+                        <li>Fall/Winter: There is a dead period during some of the fall that consists of a pre-season. However, early December is usually when our indoor season will start. This season is usually harder because of the temperature during our practices.</li>
+                    </ul>
+                    <div class="fun-fact">
+                        <h4>Fun Fact</h4>
+                        <p>The first recorded pole vault competition was held in Germany in 1791.</p>
+                    </div>
+                    <a href="https://www.iaaf.org/disciplines/vertical-jumps/pole-vault" class="button" target="_blank">View Events</a>
+                </div>
+            </div>
+        </section>
+        <section id="where">
+            <h2>Where Exactly is Pole Vaulting Practiced/Performed?</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>A cool feature of the pole vault is that it can be practiced anywhere with a mat. I was fortunate enough to have a pole vault facility in highschool and of course now in college. Though as I improved, my dad and I would travel 1.5 hours to a club and vault there.</p>
+                    <figure>
+                        <img src="images/gvaultfive.png" alt="Pole Vault at South Carolina University.">
+                        <figcaption>A higher level pole vault facility at South Carolina University.</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <h3>Locations:</h3>
+                    <ul>
+                        <li>High-Schools: Many highschools have pole vaulting facilities as part of their track and field programs but can vary widely in quality and overall safety. Most highschools do not have many poles to choose from.</li>
+                        <li>Colleges: Colleges often have some of the most advanced pole vaulting facilities in the country for training and track meets and have access to a large amount of poles.</li>
+                        <li>Clubs: Clubs are places that are usually completely dedicated to pole vault training and will often have a nice set of mats and a wide selection of poles.</li>
+                    </ul>
+                    <div class="fun-fact">
+                        <h4>Fun Fact</h4>
+                        <p>The pole vaulting pit is typically 5 meters wide and 5 meters long.</p>
+                    </div>
+                    <a href="https://www.worldathletics.org/competitions" class="button" target="_blank">Find Locations</a>
+                </div>
+            </div>
+        </section>
+        <section id="how">
+            <h2>How Does Pole Vaulting Work?</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>One of the coolest things about pole vault is that there are so many different ways to do it. The first thing that must be done is to find the right pole for yourself. Then understanding the running mechanics while holding the pole comes next. After that, it is important to learn to properly plant the pole and be comfortable with it bending. Then comes the invert where you will turn upside down and shoot off the top.</p>
+                    <figure>
+                        <img src="images/gvaultsix.png" alt="Myself clearing a bar at USC.">
+                        <figcaption>Myself entering the top 10 list for highest vaults at all time for Charlotte.</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <h3>Step-by-Step:</h3>
+                    <ul>
+                        <li>The Approach: The athlete runs towards the bar with the pole to gain momentum but remain relaxed and controlled.</li>
+                        <li>Plant and Takeoff: The pole is planted into the box, and the athlete takes off from the ground.</li>
+                        <li>Inversion: The athlete swings their legs up and turns upside down in the air.</li>
+                        <li>Extension: The athlete extends their body out of the inversion and pulls themselves up the pole as it throws them.</li>
+                        <li>Clearance: The athlete (hopefully) clears the bar and makes a safe landing.</li>
+                    </ul>
+                    <div class="fun-fact">
+                        <h4>Fun Fact</h4>
+                        <p>The poles used in pole vaulting are typically made of fiberglass, carbon fiber, or a mix of other composites.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=2ByLsiNcsv0" class="button" target="_blank">Watch Tutorial</a>
+                </div>
+            </div>
+        </section>
+        <section id="why">
+            <h2>Why Do I Pole Vault?</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>Though I have had many times at this point in my career where I thought about quitting, I still pole vault because even though I hate it sometimes, I still love it.</p>
+                    <figure>
+                        <img src="images/gvaultthree.png" alt="Pole Vaulting Popularity">
+                        <figcaption>Me a the Charlotte Opener clearing 15'1 feet.</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <h3>Reasons That I Still Vault:</h3>
+                    <ul>
+                        <li>Reminds me of all the time I spent with my dad practicing the event.</li>
+                        <li>While it can be frustrating, it is a good mental exercise and really tests your confidence.</li>
+                        <li>The feeling of conquering a mental block within the sport is so rewarding.</li>
+                        <li>The people that I have met because of the sport is extremely special to me.</li>
+                        <li>Because the sport has given me so many awesome opportunities, it would crazy to not finish out my last seasons and I would regret it.</li>
+                    </ul>
+                    <div class="fun-fact">
+                        <h4>Fun Fact</h4>
+                        <p>I have broken three poles while vaulting.</p>
+                    </div>
+                    <a href="https://www.olympic.org/pole-vault" class="button" target="_blank">Explore More</a>
+                </div>
+            </div>
+        </section>
+        <section id="ai-prompts">
+            <h2>AI Prompts</h2>
+            <div class="content-wrapper">
+                <div>
+                    <p>AI prompts that I used to help me with my project:</p>
+                    <ul>
+                        <li>How do I add a gradient background animation?</li>
+                        <li>Using just what we have in the file, how can we clean it up and make it more visually engaging and pretty with different effects?</li>
+                        <li>Lets change the font up for the website, how can I make it fun, and then for headings how can I add a text effect to them and change the color of them?</li>
+                        <li>How can I hide the sections that I have not clicked, but show the one that I have?</li>
+                        <li>How do I give the sections a hover effect when the cursor is over it?</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Designed by <a href="https://rgutknec4949.github.io/itis3135/gutknechtsolutions.com">Gutknecht Solutions</a></p>
+        <p>
+            <a href="https://validator.w3.org/check?uri=referer" style="color: white;">HTML Validation</a> |
+            <a href="https://jigsaw.w3.org/css-validator/check/referer" style="color: white;">CSS Validation</a> |
+            <a href="https://wave.webaim.org/report#/" style="color: white;">Accessibility Validation</a>
+        </p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+        }
+
+        // Show the 'what' section by default when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('what');
+        });
+    </script>
+</body>
+</html>

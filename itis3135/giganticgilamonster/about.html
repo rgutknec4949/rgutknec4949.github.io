@@ -27,6 +27,15 @@
             color: #ff0000; /* Red color */
             text-shadow: 2px 2px 4px #000000; /* Text shadow for depth */
             margin: 0;
+            animation: stretchText 2s infinite;
+        }
+        @keyframes stretchText {
+            0%, 100% {
+                letter-spacing: normal;
+            }
+            50% {
+                letter-spacing: 0.5em;
+            }
         }
         header p {
             font-size: 1.2em; /* Slightly larger font size */
@@ -78,7 +87,7 @@
             <a href="about.html">About Us</a> ~
             <a href="website_evaluations.html">Website Evaluations</a>
         </nav>
-</header>
+    </header>
     <main>
         <h2>About Us</h2>
         <p>We are here to provide Gila Monster Power (GMP)! GMP comes in small tablets that give you the strength you need to get through your day!</p>
@@ -89,7 +98,7 @@
             <a href="xyz">xyz</a>
             <a href="xzy">xzy</a>
         </nav>
-    <p>Are <strong>YOU</strong> The Monster?</p>
+        <p>Are <strong>YOU</strong> The Monster?</p>
     </footer>
 </body>
 </html>
