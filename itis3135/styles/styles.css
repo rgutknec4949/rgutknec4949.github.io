@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Times New Roman', Times, serif, sans-serif;
     background-color: lightgray;
@@ -13,32 +14,53 @@ header {
     color: white;
     text-align: center;
     padding: 1em;
-    
 }
 
 main {
-    padding: 3em;
+    flex: 1; /* Makes the main content take up the remaining space */
+    max-width: 1200px; /* Ensures content does not stretch too wide */
+    width: 90%; /* Makes layout flexible and responsive */
+    margin: 0 auto; /* Centers the content horizontally */
+    padding: 2em; /* Reduced padding for a cleaner look */
 }
 
+/* Footer Styles */
 footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 1em;
-    font-size: 1em;
+    font-size: 1em; /* Slightly smaller footer text */
+    position: static; 
+    bottom: 0; /* Ensures it stays at the bottom of the viewport */
+    width: 100%; /* Ensures the footer spans the full width */
+}
+
+footer p {
+    text-align: center; /* Centers the text inside the footer */
+    margin: 0; /* Removes default margin for better alignment */
 }
 
 nav {
-    font-size: 1em;
+    font-size: 0.9em; /* Reduced font size for navigation links */
     color: blue;
 }
 
 nav a {
-    color: blue;
+    color: teal; /* Set the link color to teal */
+    text-decoration: none; /* Remove underline for a cleaner look */
 }
 
 nav a:visited {
-    color: purple;
+    color: teal; /* Ensure the color remains teal after the link is clicked */
+}
+
+nav a:hover {
+    color: darkcyan; /* Optional: Slightly darker teal for hover effect */
+}
+
+nav a:active {
+    color: teal; /* Ensure the color remains teal when the link is active */
 }
 
 img {
@@ -46,4 +68,70 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+}
+
+/* Responsive Design for Different Devices */
+
+/* Small Devices (Mobile) */
+@media (max-width: 600px) {
+    body {
+        font-size: 12px; /* Smaller font size for mobile devices */
+    }
+    header {
+        font-size: 1.2em;
+    }
+    main {
+        padding: 1.5em;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 14px; /* Slightly larger font size for tablets */
+    }
+    header {
+        font-size: 1.4em;
+    }
+    main {
+        padding: 2em;
+    }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 16px; /* Standard font size for desktops */
+    }
+    header {
+        font-size: 1.6em;
+    }
+    main {
+        padding: 2.5em;
+    }
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2em; /* Reduced size for the main heading */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #060700; /* Bright green for branding */
+    text-shadow: 1px 1px 2px #000; /* Subtle shadow for depth */
+}
+
+h2 {
+    font-size: 1.5em; /* Reduced size for subheadings */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #FF5733; /* A contrasting color for subheadings */
+    text-align: center;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1em; /* Standard size for better readability */
+    line-height: 1.5; /* Adjusted spacing between lines */
+    text-align: justify;
 }
