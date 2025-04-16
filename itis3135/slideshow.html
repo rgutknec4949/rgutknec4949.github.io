@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Gutknecht - Slideshow</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .slides {
+            display: none;
+            text-align: center;
+        }
+
+        .slides img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dots span {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dots span.active {
+            background-color: #717171;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Graham Gutknecht's Gigantic Gila Monster ♠️ ITIS 3135</h1>
+        <nav>
+            <a href="index.html">Home ♠️</a>
+            <a href="hobby/index.html">Hobby</a> ♠️
+            <a href="https://rgutknec4949.github.io/itis3135/gutknechtsolutions.com">Gutknecht Solutions</a> ♠️
+            <a href="contract.html">Contract</a> ♠️
+            <a href="giganticgilamonster/website_evaluations.html">Website Evaluations</a> ♠️
+            <a href="../Stuff/ForDD.htm">Crappy Website ♠️</a>
+            <a href="tables.html">Tables ♠️</a>
+            <a href="byo_intro.html">BYO Intro</a> ♠️
+            <a href="introduction.html">Introduction</a> ♠️
+            <a href="slideshow.html">Slideshow</a> 
+        </nav>
+    </header>
+    <main>
+        <h2>Slideshow</h2>
+        <div class="slideshow-container">
+            <div class="slides">
+                <img src="images/giraffe.png" alt="Giraffe">
+                <p class="caption">G for Giraffe: Represents the first letter of my name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/rainbow.png" alt="Rainbow">
+                <p class="caption">R for Rainbow: Represents the second letter of my name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/apple.png" alt="Apple">
+                <p class="caption">A for Apple: Represents the third letter of my name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/honey.png" alt="Honey">
+                <p class="caption">H for Honey: Represents the fourth letter of my name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/airplane.png" alt="Airplane">
+                <p class="caption">A for Airplane: Represents the fifth letter of my name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/mountain.png" alt="Mountain">
+                <p class="caption">M for Mountain: Represents the sixth letter of my name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/galaxy.png" alt="Galaxy">
+                <p class="caption">G for Galaxy: Represents the first letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/unicorn.png" alt="Unicorn">
+                <p class="caption">U for Unicorn: Represents the second letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/tiger.png" alt="Tiger">
+                <p class="caption">T for Tiger: Represents the third letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/kite.png" alt="Kite">
+                <p class="caption">K for Kite: Represents the fourth letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/nightingale.png" alt="Nightingale">
+                <p class="caption">N for Nightingale: Represents the fifth letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/elephant.png" alt="Elephant">
+                <p class="caption">E for Elephant: Represents the sixth letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/castle.png" alt="Castle">
+                <p class="caption">C for Castle: Represents the seventh letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/helicopter.png" alt="Helicopter">
+                <p class="caption">H for Helicopter: Represents the eighth letter of my last name.</p>
+            </div>
+            <div class="slides">
+                <img src="images/telescope.png" alt="Telescope">
+                <p class="caption">T for Telescope: Represents the ninth letter of my last name.</p>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="dots">
+        </div>
+
+        <h3>Notes</h3>
+
+        <p><strong>Help:</strong></p>
+        <ul>
+            <li>Sites: W3Schools for slideshow implementation.</li>
+            <li>People: My father.</li>
+            <li>Other: N/A</li>
+        </ul>
+
+        <p><strong>Ai Prompts:</strong></p>
+        <ul>
+            <li>A giraffe in a savannah.</li>
+            <li>A beautiful rainbow.</li>
+            <li>A crisp apple.</li>
+            <li>Honey out of a jar.</li>
+            <li>A giant airplane.</li>
+            <li>A colossal mountain.</li>
+            <li>A cosmic galaxy.</li>
+            <li>A majesitc unicorn.</li>
+            <li>A vicious tiger</li>
+            <li>A windy kite</li>
+            <li>A dark nightingale.</li>
+            <li>A giant elephant.</li>
+            <li>A formidable castle.</li>
+            <li>A fast helicopter.</li>
+            <li>A huge telescope.</li>
+        </ul>
+        <p><strong>Challenges:</strong> Understanding how to implement the slideshow functionality using JavaScript.</p>
+        <p><strong>Statement:</strong> This is my work, and I did not copy and paste someone else's code.</p>
+        <p><strong>Signature:</strong> Richard Gutknecht</p>
+        <p><strong>Date and Time:</strong> April 10, 2025, 3:00 PM</p>
+    </main>
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="slideshow.html">Slideshow</a>
+        </nav>
+        <p>Page built by Richard Gutknecht © 2025</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides() {
+    const slides = document.getElementsByClassName("slides");
+    if (slideIndex >= slides.length) {
+        slideIndex = 0; // Loop back to the first slide
+    }
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1; // Loop to the last slide
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; // Hide all slides
+    }
+    slides[slideIndex].style.display = "block"; // Show the current slide
+}
+    </script>
+</body>
+</html>
