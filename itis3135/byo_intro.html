@@ -3,86 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Your Own Intro Page</title>
+    <title>Course Contract - ITIS 3135</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/survey.js" defer></script>
+    <style>
+        /* Styling for the form container */
+        #byo-intro-form {
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px;
+            border: 1px solid #3f3636;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            font-size: 14px; /* Slightly smaller font size */
+        }
+    
+        /* Styling for labels */
+        #byo-intro-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+    
+        /* Styling for inputs */
+        #byo-intro-form input[type="text"],
+        #byo-intro-form input[type="file"],
+        #byo-intro-form input[type="checkbox"],
+        #byo-intro-form button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    
+        /* Styling for the agreement checkbox */
+        #byo-intro-form label input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+    
+        /* Styling for buttons */
+        #byo-intro-form input[type="submit"],
+        #byo-intro-form input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 4%;
+        }
+    
+        #byo-intro-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+        }
+    
+        #byo-intro-form input[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+        }
+    
+        #byo-intro-form input[type="submit"]:hover,
+        #byo-intro-form input[type="reset"]:hover {
+            opacity: 0.9;
+            
+        }
+    
+        /* Center the page content */
+        
+        body {
+            background-color: #d3d3d3;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+
+    </style>
 </head>
 <body>
-    <h3>Time to BYO Intro page, please fill out the form below so we can create your own page.</h3>
-    <form id="byo-intro-form">
-        <!-- Name -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-
-        <!-- Mascot -->
-        <label for="mascot">Mascot:</label>
-        <input type="text" id="mascot" name="mascot" required>
-        <br><br>
-
-        <!-- Image Upload -->
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" required>
-        <br><br>
-
-        <!-- Image Caption -->
-        <label for="image-caption">Image Caption:</label>
-        <input type="text" id="image-caption" name="image-caption" required>
-        <br><br>
-
-        <!-- Personal Background -->
-        <label for="personal-background">Personal Background:</label>
-        <input type="text" id="personal-background" name="personal-background" required>
-        <br><br>
-
-        <!-- Professional Background -->
-        <label for="professional-background">Professional Background:</label>
-        <input type="text" id="professional-background" name="professional-background" required>
-        <br><br>
-
-        <!-- Academic Background -->
-        <label for="academic-background">Academic Background:</label>
-        <input type="text" id="academic-background" name="academic-background" required>
-        <br><br>
-
-        <!-- Background in Web Development -->
-        <label for="web-background">Background in Web Development:</label>
-        <input type="text" id="web-background" name="web-background" required>
-        <br><br>
-
-        <!-- Primary Computer Platform -->
-        <label for="computer-platform">Primary Computer Platform:</label>
-        <input type="text" id="computer-platform" name="computer-platform" required>
-        <br><br>
-
-        <!-- Courses Currently Taking -->
-        <label for="courses">Courses Currently Taking:</label>
-        <div id="courses-container">
-            <input type="text" name="courses[]" required>
-        </div>
-        <button type="button" id="add-course">Add Course</button>
-        <br><br>
-
-        <!-- Funny Thing -->
-        <label for="funny-thing">Funny Thing:</label>
-        <input type="text" id="funny-thing" name="funny-thing" required>
-        <br><br>
-
-        <!-- Anything Else -->
-        <label for="anything-else">Anything Else:</label>
-        <input type="text" id="anything-else" name="anything-else" required>
-        <br><br>
-
-        <!-- Agreement Checkbox -->
-        <label>
-            <input type="checkbox" id="agreement" name="agreement" required>
-            I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.
-        </label>
-        <br><br>
-
-        <!-- Control Buttons -->
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-    </form>
+    <header>
+        <h1>Graham Gutknecht's Gigantic Gila Monster ♠️ ITIS 3135</h1>
+        <nav class="primary-nav">
+            <a href="index.html">Home ♠️</a>
+            <a href="hobby/index.html">Hobby</a> ♠️
+            <a href="https://rgutknec4949.github.io/itis3135/gutknechtsolutions.com">Gutknecht Solutions</a> ♠️
+            <a href="contract.html">Contract</a> ♠️
+            <a href="giganticgilamonster/website_evaluations.html">Website Evaluations</a> ♠️
+            <a href="../Stuff/ForDD.htm">Crappy Website ♠️</a>
+            <a href="tables.html">Tables ♠️</a>
+            <a href="byo_intro.html">BYO Intro</a> ♠️
+            <a href="introduction.html">Introduction</a> ♠️
+        </nav>
+        <nav class="secondary-nav">
+        </nav>
+    </header>
+    <main>
+        <h3>Time to BYO Intro page, please fill out the form below so we can create your own page.</h3>
+        <form id="byo-intro-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="mascot">Mascot:</label>
+            <input type="text" id="mascot" name="mascot" required>
+    
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" required>
+    
+            <label for="image-caption">Image Caption:</label>
+            <input type="text" id="image-caption" name="image-caption" required>
+    
+            <label for="personal-background">Personal Background:</label>
+            <input type="text" id="personal-background" name="personal-background" required>
+    
+            <label for="professional-background">Professional Background:</label>
+            <input type="text" id="professional-background" name="professional-background" required>
+    
+            <label for="academic-background">Academic Background:</label>
+            <input type="text" id="academic-background" name="academic-background" required>
+    
+            <label for="web-background">Background in Web Development:</label>
+            <input type="text" id="web-background" name="web-background" required>
+    
+            <label for="computer-platform">Primary Computer Platform:</label>
+            <input type="text" id="computer-platform" name="computer-platform" required>
+    
+            <div id="courses-container">
+                <input type="text" name="courses[]" required placeholder="Enter course name">
+            </div>
+            <button type="button" id="add-course">Add Course</button>
+    
+            <label for="funny-thing">Funny Thing:</label>
+            <input type="text" id="funny-thing" name="funny-thing" required>
+    
+            <label for="anything-else">Anything Else:</label>
+            <input type="text" id="anything-else" name="anything-else" required>
+    
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    
+        <script src="scripts/survey.js"></script>
+    </main>
+    <footer>
+        <nav>
+            <a href="https://webpages.charlotte.edu/rgutknec/">CLT Site |</a> 
+            <a href="https://github.com/rgutknec4949">GitHub |</a> 
+            <a href="https://github.com/rgutknec4949/rgutknec4949.github.io">GitHub Pages |</a> 
+            <a href="https://rgutknec4949.github.io/itis3135/">ITIS3135.io |</a> 
+            <a href="https://www.linkedin.com/in/graham-gutknecht-700a31251/">LinkedIn |</a> 
+        </nav>
+        <p>Page built by <a href="https://rgutknec4949.github.io/itis3135/">Gigantic Gila Monster</a> © 2025</p>
+    </footer>
 </body>
 </html>

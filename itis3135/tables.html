@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer 40k Lore Tables - ITIS 3135</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Embedded styling for tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #ffcc00;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #2a2a2a;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #1f1f1f;
+        }
+
+        tfoot th {
+            background-color: #444;
+            color: #ffcc00;
+            text-align: right;
+        }
+
+        ol {
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #000000;
+        }
+
+        ol li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Graham Gutknecht's Gigantic Gila Monster ♠️ ITIS 3135</h1>
+        <nav>
+            <a href="index.html">Home ♠️</a>
+            <a href="hobby/index.html">Hobby</a> ♠️
+            <a href="https://rgutknec4949.github.io/itis3135/gutknechtsolutions.com">Gutknecht Solutions</a> ♠️
+            <a href="contract.html">Contract</a> ♠️
+            <a href="giganticgilamonster/website_evaluations.html">Website Evaluations</a> ♠️
+            <a href="../Stuff/ForDD.htm">Crappy Website ♠️</a>
+            <a href="tables.html">Tables ♠️</a>
+            <a href="byo_intro.html">BYO Intro</a> ♠️
+            <a href="introduction.html">Introduction</a> ♠️
+        </nav>
+    </header>
+
+    <main>
+        <h2>Activity #2: HTML Tables</h2>
+
+        <!-- Part 3: Tabular Data in a Numbered List -->
+        <h3>Faction Leaders in Numbered List</h3>
+        <ol>
+            <li>Roboute Guilliman - Ultramarines - 10,000 years of service</li>
+            <li>Abaddon the Despoiler - Black Legion - 10,000 years of service</li>
+            <li>Yvraine - Ynnari - 500 years of service</li>
+            <li>Ghazghkull Thraka - Orks - 200 years of service</li>
+            <li>Saint Celestine - Adepta Sororitas - 1,000 years of service</li>
+            <li>Magnus the Red - Thousand Sons - 10,000 years of service</li>
+            <li>Farsight - T'au Empire - 300 years of service</li>
+        </ol>
+
+        <!-- Part 3: Simple Table -->
+        <h3>Faction Leaders in Simple Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Faction</th>
+                    <th>Years of Service</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Roboute Guilliman</td>
+                    <td>Ultramarines</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td>Abaddon the Despoiler</td>
+                    <td>Black Legion</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td>Yvraine</td>
+                    <td>Ynnari</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Ghazghkull Thraka</td>
+                    <td>Orks</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>Saint Celestine</td>
+                    <td>Adepta Sororitas</td>
+                    <td>1,000</td>
+                </tr>
+                <tr>
+                    <td>Magnus the Red</td>
+                    <td>Thousand Sons</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td>Farsight</td>
+                    <td>T'au Empire</td>
+                    <td>300</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Part 4: Complex Table -->
+        <h3>Faction Leaders in Complex Table</h3>
+        <figure>
+            <figcaption>Warhammer 40k Faction Leaders</figcaption>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>Faction</th>
+                        <th>Years of Service</th>
+                        <th>Monthly Influence (in points)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Imperium</td>
+                        <td>Roboute Guilliman</td>
+                        <td>Ultramarines</td>
+                        <td>10,000</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>Saint Celestine</td>
+                        <td>Adepta Sororitas</td>
+                        <td>1,000</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Chaos</td>
+                        <td>Abaddon the Despoiler</td>
+                        <td>Black Legion</td>
+                        <td>10,000</td>
+                        <td>600</td>
+                    </tr>
+                    <tr>
+                        <td>Magnus the Red</td>
+                        <td>Thousand Sons</td>
+                        <td>10,000</td>
+                        <td>550</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Xenos</td>
+                        <td>Yvraine</td>
+                        <td>Ynnari</td>
+                        <td>500</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>Farsight</td>
+                        <td>T'au Empire</td>
+                        <td>300</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>Orks</td>
+                        <td>Ghazghkull Thraka</td>
+                        <td>Orks</td>
+                        <td>200</td>
+                        <td>150</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3">Total Years of Service</th>
+                        <td>41,000</td>
+                        <td>2,550</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </figure>
+    </main>
+
+    <footer>
+        <a href="https://webpages.charlotte.edu/rgutknec/">CLT Site |</a> 
+        <a href="https://github.com/rgutknec4949">GitHub |</a> 
+        <a href="https://github.com/rgutknec4949/rgutknec4949.github.io">GitHub Pages |</a> 
+        <a href="https://rgutknec4949.github.io/itis3135/">ITIS3135.io |</a> 
+        <a href="https://www.freecodecamp.org/rgutknecUNCC">FreeCodeCamp |</a> 
+        <a href="https://www.codecademy.com/profiles/rgutknecUNCC">CodeAcademy |</a> 
+        <a href="https://www.linkedin.com/in/graham-gutknecht-700a31251/">LinkedIn |</a> 
+        <a href="giganticgilamonster/website_evaluations.html"> Website Evaluations</a>
+        <p>Page built by <a href="https://rgutknec4949.github.io/itis3135/">Gigantic Gila Monster</a> © 2025</p>
+    </footer>
+</body>
+</html>

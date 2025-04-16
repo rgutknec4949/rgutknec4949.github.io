@@ -4,25 +4,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const addCourseButton = document.getElementById("add-course");
 
     // Function to add a new course text box
-    addCourseButton.addEventListener("click", () => {
+    const addCourseField = () => {
         const courseField = document.createElement("div");
         courseField.innerHTML = `
-            <input type="text" name="courses[]" required>
+            <input type="text" name="courses[]" required placeholder="Enter course name">
             <button type="button" class="remove-course">Remove</button>
         `;
         coursesContainer.appendChild(courseField);
 
-        // Add a delete button beside the new course text box
+        // Add functionality to remove the course field
         courseField.querySelector(".remove-course").addEventListener("click", () => {
             coursesContainer.removeChild(courseField);
         });
-    });
+    };
 
-    // Function to handle form submission
-    form.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent default form submission
+    addCourseButton.addEventListener("click", addCourseField);
 
-        // Validate required fields
+    // Function to validate required fields
+    const validateFields = () => {
         const requiredFields = form.querySelectorAll("[required]");
         let isValid = true;
 
@@ -30,12 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!field.value.trim()) {
                 isValid = false;
                 field.style.border = "2px solid red"; // Highlight missing fields
+                if (!field.nextElementSibling || !field.nextElementSibling.classList.contains("error-message")) {
+                    const errorMessage = document.createElement("span");
+                    errorMessage.textContent = "This field is required.";
+                    errorMessage.classList.add("error-message");
+                    errorMessage.style.color = "red";
+                    errorMessage.style.fontSize = "12px";
+                    field.insertAdjacentElement("afterend", errorMessage);
+                }
             } else {
                 field.style.border = ""; // Reset border if valid
+                if (field.nextElementSibling && field.nextElementSibling.classList.contains("error-message")) {
+                    field.nextElementSibling.remove(); // Remove error message
+                }
             }
         });
 
-        if (!isValid) {
+        return isValid;
+    };
+
+    // Function to handle form submission
+    form.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        // Validate required fields
+        if (!validateFields()) {
             alert("Please fill out all required fields.");
             return;
         }
@@ -50,6 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (imageFile && (imageFile.type === "image/png" || imageFile.type === "image/jpeg")) {
             const imageURL = URL.createObjectURL(imageFile);
             imageHTML = `<img src="${imageURL}" alt="${formData.get("image-caption")}" style="max-width: 300px; display: block; margin: 1em auto;">`;
+        } else if (imageFile) {
+            alert("Unsupported file type. Please upload a PNG or JPEG image.");
+            return;
         }
 
         output.innerHTML = `
@@ -76,11 +97,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Function to reset the progress of the form
+    // Function to reset the form and clear validation styles
     form.addEventListener("reset", () => {
         const requiredFields = form.querySelectorAll("[required]");
         requiredFields.forEach((field) => {
             field.style.border = ""; // Reset border styles
+            if (field.nextElementSibling && field.nextElementSibling.classList.contains("error-message")) {
+                field.nextElementSibling.remove(); // Remove error messages
+            }
         });
     });
 });
