@@ -1,0 +1,224 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1c; /* Dark background for a rugged look */
+    color: #f4f4f4; /* Light text for contrast */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #333, #000); /* Rugged gradient */
+    color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-bottom: 4px solid #ff4500; /* Orange accent for energy */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: #ff4500; /* Orange links for energy */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+header nav a:hover {
+    color: #f4f4f4; /* Light text on hover */
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #2b2b2b; /* Slightly lighter dark background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Rugged shadow */
+    flex: 1;
+}
+
+h2, h3 {
+    color: #ff4500; /* Orange headings for energy */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+ul {
+    list-style-type: square; /* Rugged square bullets */
+    margin-left: 20px;
+    color: #f4f4f4;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #ff4500;
+    color: #f4f4f4;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e63900; /* Darker orange on hover */
+}
+
+/* Footer Styling */
+footer {
+    background: #000;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    border-top: 4px solid #ff4500;
+}
+
+footer a {
+    color: #ff4500;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Rugged shadow */
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slides img {
+    border: 4px solid #ff4500; /* Orange border for energy */
+    border-radius: 8px;
+}
+
+.caption {
+    text-align: center;
+    font-size: 1.2em;
+    color: #f4f4f4;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #f4f4f4;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 69, 0, 0.8); /* Orange hover effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header nav a {
+        font-size: 0.9em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h2, h3 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Center and Style Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center; /* Centers the navigation links */
+    background-color: #000; /* Dark background for contrast */
+    padding: 15px 0; /* Adds padding for better spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for depth */
+    border-bottom: 4px solid #ff4500; /* Orange accent for energy */
+}
+
+nav a {
+    color: #ff4500; /* Orange links for energy */
+    text-decoration: none;
+    margin: 0 20px; /* Adds spacing between links */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2em; /* Slightly larger font for readability */
+    padding: 10px 15px; /* Adds padding for a button-like feel */
+    border-radius: 5px; /* Rounds the edges for a smoother look */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+nav a:hover {
+    background-color: #ff4500; /* Orange background on hover */
+    color: #1c1c1c; /* Dark text on hover for contrast */
+    text-decoration: none; /* Ensures no underline on hover */
+}
