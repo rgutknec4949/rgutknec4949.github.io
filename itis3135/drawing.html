@@ -9,19 +9,70 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.8.0/lib/p5.js"></script>
     <script src="scripts/sketch.js"></script>
     <style>
-        /* Styling for the canvas container */
-        #canvas-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80vh; /* Slightly smaller height for better layout */
-        width: 90%; /* Add some width constraint */
-        margin: auto; /* Center the container horizontally */
-        background: linear-gradient(135deg, #f0f8ff, #e6e6fa); /* Gradient background */
-        border-radius: 15px; /* Rounded corners */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-        }
-    </style>
+    /* Styling for the instructions section */
+    #instructions {
+        background: linear-gradient(135deg, #e6e6fa, #f0f8ff); /* Light gradient background */
+        border: 2px solid #4b0082; /* Indigo border */
+        border-radius: 10px; /* Rounded corners */
+        padding: 20px; /* Add padding inside the box */
+        margin: 20px auto; /* Center the instructions and add spacing */
+        width: 80%; /* Constrain the width */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        font-family: Arial, sans-serif; /* Clean font */
+        color: #333; /* Dark text color for readability */
+    }
+
+    #instructions h3 {
+        text-align: center; /* Center the heading */
+        color: #4b0082; /* Indigo color for the heading */
+        margin-bottom: 10px; /* Add spacing below the heading */
+    }
+
+    #instructions ul {
+        list-style-type: none; /* Remove default bullet points */
+        padding: 0; /* Remove padding */
+    }
+
+    #instructions li {
+        margin: 10px 0; /* Add spacing between list items */
+        font-size: 16px; /* Slightly larger font size */
+    }
+
+    #instructions strong {
+        color: #4b0082; /* Highlight keys in indigo */
+    }
+
+    #instructions .red {
+        color: red; /* Red text for red instructions */
+    }
+
+    #instructions .green {
+        color: green; /* Green text for green instructions */
+    }
+
+    #instructions .blue {
+        color: blue; /* Blue text for blue instructions */
+    }
+
+    #instructions .white {
+        color: #fff; /* White text for white instructions */
+        background: #333; /* Add a dark background for visibility */
+        padding: 2px 5px; /* Add padding around the text */
+        border-radius: 3px; /* Rounded corners for the background */
+    }
+
+    #canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust height to center vertically */
+    margin: auto; /* Center horizontally */
+    background: #ffffff; /* Optional: Add a black background for the container */
+    border: 2px solid #4b0082; /* Optional: Add a border for better visibility */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
+</style>
 </head>
 <body>
     <header>
@@ -45,7 +96,20 @@
     </header>
     <main>
         <h2>Interactive Drawing Page</h2>
-        <div id="canvas-container"></div>
+        <div id="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li>Press <strong>R</strong> to draw in <span class="red">Red</span>.</li>
+                <li>Press <strong>G</strong> to draw in <span class="green">Green</span>.</li>
+                <li>Press <strong>B</strong> to draw in <span class="blue">Blue</span>.</li>
+                <li>Press <strong>W</strong> to draw in <span class="white">White</span>.</li>
+                <li>Press <strong>C</strong> to clear the canvas.</li>
+                <li>Use the <strong>Mouse Wheel</strong> to adjust the stroke size.</li>
+                <li>Click and drag the mouse to draw on the canvas.</li>
+            </ul>
+        </div>
+        <div id="canvas-container">
+        </div>
     </main>
     <footer>
         <nav>
