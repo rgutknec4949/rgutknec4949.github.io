@@ -1,10 +1,8 @@
 let slideIndex = 0; // Initialize the slide index
-showSlides(slideIndex); // Show the first slide
+
 
 // Function to navigate to the next or previous slide
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+
 
 // Function to display the current slide
 function showSlides(n) {
@@ -21,6 +19,13 @@ function showSlides(n) {
     slides[slideIndex].style.display = "block"; // Show the current slide
 }
 
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+showSlides(slideIndex); // Show the first slide
+
 // Add event listeners for navigation arrows
 document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
 document.querySelector(".next").addEventListener("click", () => plusSlides(1));
+
