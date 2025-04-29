@@ -50,6 +50,26 @@
         h2 {
             color: #004080; /* Dark blue color for headers */
         }
+        ul {
+        list-style-type: none; /* Remove default bullet points */
+        padding: 0; /* Remove default padding */
+        }
+
+        ul li {
+        position: relative; /* Allows positioning of the star icon */
+        padding-left: 25px; /* Add space for the star icon */
+        line-height: 1.5; /* Ensures proper spacing between lines */
+        }
+
+        ul li::before {
+        content: "★"; /* Unicode for a star */
+        color: #ffcc00; /* Gold color for the star */
+        position: absolute; /* Position the star */
+        left: 0; /* Align the star to the left */
+        top: 50%; /* Align the star vertically */
+        transform: translateY(-50%); /* Adjust for perfect vertical centering */
+        font-size: 1.2em; /* Adjust the size of the star */
+        }
     </style>
 </head>
 <body>

@@ -1,110 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("byo-intro-form");
-    const coursesContainer = document.getElementById("courses-container");
-    const addCourseButton = document.getElementById("add-course");
+    const main = document.querySelector("main");
 
-    // Function to add a new course text box
-    const addCourseField = () => {
-        const courseField = document.createElement("div");
-        courseField.innerHTML = `
-            <input type="text" name="courses[]" required placeholder="Enter course name">
-            <button type="button" class="remove-course">Remove</button>
-        `;
-        coursesContainer.appendChild(courseField);
-
-        // Add functionality to remove the course field
-        courseField.querySelector(".remove-course").addEventListener("click", () => {
-            coursesContainer.removeChild(courseField);
-        });
-    };
-
-    addCourseButton.addEventListener("click", addCourseField);
-
-    // Function to validate required fields
-    const validateFields = () => {
-        const requiredFields = form.querySelectorAll("[required]");
-        let isValid = true;
-
-        requiredFields.forEach((field) => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.style.border = "2px solid red"; // Highlight missing fields
-                if (!field.nextElementSibling || !field.nextElementSibling.classList.contains("error-message")) {
-                    const errorMessage = document.createElement("span");
-                    errorMessage.textContent = "This field is required.";
-                    errorMessage.classList.add("error-message");
-                    errorMessage.style.color = "red";
-                    errorMessage.style.fontSize = "12px";
-                    field.insertAdjacentElement("afterend", errorMessage);
-                }
-            } else {
-                field.style.border = ""; // Reset border if valid
-                if (field.nextElementSibling && field.nextElementSibling.classList.contains("error-message")) {
-                    field.nextElementSibling.remove(); // Remove error message
-                }
-            }
-        });
-
-        return isValid;
-    };
-
-    // Function to handle form submission
     form.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); // Prevent the form from refreshing the page
 
-        // Validate required fields
-        if (!validateFields()) {
-            alert("Please fill out all required fields.");
-            return;
-        }
+        // Capture form data
+        const name = document.getElementById("name").value;
+        const mascot = document.getElementById("mascot").value;
+        const image = document.getElementById("image").files[0];
+        const personalBackground = document.getElementById("personal-background").value;
+        const professionalBackground = document.getElementById("professional-background").value;
+        const academicBackground = document.getElementById("academic-background").value;
+        const webBackground = document.getElementById("web-background").value;
+        const computerPlatform = document.getElementById("computer-platform").value;
+        const courses = Array.from(document.querySelectorAll("input[name='courses[]']")).map((input) => input.value);
+        const funnyThing = document.getElementById("funny-thing").value;
+        const anythingElse = document.getElementById("anything-else").value;
 
-        // Gather form data and replace the form with the content
-        const formData = new FormData(form);
-        const output = document.createElement("div");
-        const imageFile = formData.get("image");
-
-        // Create an image element if a file is uploaded
-        let imageHTML = "";
-        if (imageFile && (imageFile.type === "image/png" || imageFile.type === "image/jpeg")) {
-            const imageURL = URL.createObjectURL(imageFile);
-            imageHTML = `<img src="${imageURL}" alt="${formData.get("image-caption")}" style="max-width: 300px; display: block; margin: 1em auto;">`;
-        } else if (imageFile) {
-            alert("Unsupported file type. Please upload a PNG or JPEG image.");
-            return;
-        }
-
-        output.innerHTML = `
-            <h3>Your Intro Page</h3>
-            <p><strong>Name:</strong> ${formData.get("name")}</p>
-            <p><strong>Mascot:</strong> ${formData.get("mascot")}</p>
-            ${imageHTML}
-            <p><strong>Image Caption:</strong> ${formData.get("image-caption")}</p>
-            <p><strong>Personal Background:</strong> ${formData.get("personal-background")}</p>
-            <p><strong>Professional Background:</strong> ${formData.get("professional-background")}</p>
-            <p><strong>Academic Background:</strong> ${formData.get("academic-background")}</p>
-            <p><strong>Background in Web Development:</strong> ${formData.get("web-background")}</p>
-            <p><strong>Primary Computer Platform:</strong> ${formData.get("computer-platform")}</p>
-            <p><strong>Courses Currently Taking:</strong> ${formData.getAll("courses[]").join(", ")}</p>
-            <p><strong>Funny Thing:</strong> ${formData.get("funny-thing")}</p>
-            <p><strong>Anything Else:</strong> ${formData.get("anything-else")}</p>
-            <button id="reset-form">Reset</button>
+        // Generate the output HTML
+        const outputHTML = `
+            <h2>${name}'s Introduction</h2>
+            <img src="${URL.createObjectURL(image)}" alt="${mascot}" class="output-image">
+            <ul>
+                <li><span>Personal Background:</span> ${personalBackground}</li>
+                <li><span>Professional Background:</span> ${professionalBackground}</li>
+                <li><span>Academic Background:</span> ${academicBackground}</li>
+                <li><span>Background in Web Development:</span> ${webBackground}</li>
+                <li><span>Primary Computer Platform:</span> ${computerPlatform}</li>
+                <li><span>Courses I'm Taking & Why:</span>
+                    <ul>
+                        ${courses.map((course) => `<li>${course}</li>`).join("")}
+                    </ul>
+                </li>
+                <li><span>Funny/Interesting Item to Remember Me By:</span> ${funnyThing}</li>
+                <li><span>I'd also like to share:</span> ${anythingElse}</li>
+            </ul>
         `;
-        form.replaceWith(output);
 
-        // Add reset functionality
-        document.getElementById("reset-form").addEventListener("click", () => {
-            location.reload(); // Reload the page to reset the form
-        });
+        // Clear the form and display the output
+        form.reset();
+        main.innerHTML = outputHTML;
     });
 
-    // Function to reset the form and clear validation styles
-    form.addEventListener("reset", () => {
-        const requiredFields = form.querySelectorAll("[required]");
-        requiredFields.forEach((field) => {
-            field.style.border = ""; // Reset border styles
-            if (field.nextElementSibling && field.nextElementSibling.classList.contains("error-message")) {
-                field.nextElementSibling.remove(); // Remove error messages
-            }
-        });
+    // Add functionality to dynamically add more course inputs
+    const addCourseButton = document.getElementById("add-course");
+    const coursesContainer = document.getElementById("courses-container");
+
+    addCourseButton.addEventListener("click", () => {
+        const newCourseInput = document.createElement("input");
+        newCourseInput.type = "text";
+        newCourseInput.name = "courses[]";
+        newCourseInput.placeholder = "Enter course name";
+        newCourseInput.required = true;
+        coursesContainer.appendChild(newCourseInput);
     });
 });

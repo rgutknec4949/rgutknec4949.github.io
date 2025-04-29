@@ -60,13 +60,6 @@ main {
     flex: 1;
 }
 
-h2, h3 {
-    color: #ff4500; /* Orange headings for energy */
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
 p {
     margin-bottom: 15px;
     font-size: 1.1em;
@@ -187,20 +180,12 @@ img {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
     header nav a {
         font-size: 0.9em;
     }
 
     main {
         padding: 15px;
-    }
-
-    h2, h3 {
-        font-size: 1.5em;
     }
 
     p {
@@ -259,12 +244,6 @@ nav a:hover {
     text-align: center;
 }
 
-.meal h3 {
-    color: #ff4500; /* Orange headings for energy */
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
 .meal ul {
     list-style-type: none; /* Removes default bullet points */
     padding: 0;
@@ -307,7 +286,7 @@ nav a:hover {
     text-align: center;
 }
 
-.product h3 {
+h3 {
     color: #ff4500; /* Orange headings for energy */
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -385,13 +364,18 @@ nav a:hover {
     padding: 10px;
     border: none;
     text-align: left;
-    outline: none;
     font-size: 1.2em;
     margin-bottom: 5px;
     border-radius: 5px;
 }
 
-.collapsible.active {
+.collapsible:hover {
+    background-color: #ff4500; /* Highlight orange on hover */
+    color: #fff; /* Ensure the text remains white for contrast */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.active {
     background-color: #ff4500; /* Highlight active section */
 }
 
@@ -544,7 +528,7 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-.featured-item h4 {
+h4 {
     color: #ff4500;
     margin-bottom: 10px;
 }
